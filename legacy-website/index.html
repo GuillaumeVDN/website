@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <!-- HEAD -->
+  <head>
+    <!-- Header -->
+    <title>GuillaumeVDN</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="profile.png">
+    <!-- Style -->
+    <style>
+      div {
+        position: absolute;
+        top: 80%;
+        left: 35%;
+        transform: translateX(-25%) translateY(-25%);
+      }
+      div.h2 {
+        vertical-align: top;
+        display: inline-block;
+        text-align: center;
+        width: 300px;
+      }
+      div.p {
+        vertical-align: top;
+        display: inline-block;
+        text-align: center;
+        width: 600px;
+      }
+      .title {
+        font-family: "Courier", "serif";
+        color: #303030;
+      }
+      .text {
+        font-family: "Courier", "serif";
+        color: #303030;
+        font-weight: normal
+      }
+    </style>
+      <!-- Scrips -->
+    <script type="text/javascript">
+      // fields
+      var birthdayDate = new Date(2001, 3, 2);
+      var javaStartDate = new Date(2015, 0, 1);// taking 1st january 2015 as a reference since I have no "official date"
+      
+      // functions
+      function writeMail(lhs,rhs,subject,title) {
+        document.write("<a target=\"_blank\" href=\"mailto");
+        document.write(":" + lhs + "@");
+        document.write(rhs + "?subject=" + subject + "\">" + title + "<\/a>");
+      }
+      function writeTimeFromDate(date,showMonths) {
+        var daysDiff = Math.round(Math.abs((date.getTime() - Date.now()) / 86400000));
+        var years = Math.floor(daysDiff / 365);
+        document.write(years + " year" + (years > 1 ? "s" : ""));
+        if (showMonths) {
+          var months = Math.round((daysDiff - years * 365) / 30)
+          if (months > 0) {
+            document.write(" and " + months + " month" + (months > 1 ? "s" : ""));
+          }
+        }
+      }
+    </script>
+  </head>
+  <!-- BODY -->
+  <body bgcolor="#F6F6F6">
+    <div>
+      <img src='profile.png' alt='My freaking awesome amazing face' /><br/>
+      <!-- Header -->
+	  <p class='text'><i>^ the handsome me</i><br/><br/></p>
+      <h2 class='title'>Hello, there !</h2>
+      <h3 class='text'>I'm a <script>writeTimeFromDate(birthdayDate,false);</script><noscript><em>{no javascript}</em></noscript> old java developer from Belgium.</h3>
+      <p class='text'>
+        I mainly work on Minecraft Spigot plugins, and lots of projects are in my mind.<br/>
+        Experience with plugins : <i>around <script>writeTimeFromDate(javaStartDate,true);</script><noscript><em>{no javascript}</em></noscript></i>
+        <br/>
+      </p>
+      <p class='text' style="font-size: 8pt;">So, welcome on this hand-made website. I know, you can clearly see that it has been made by someone who hasn't learned much in web development. There's no time.</p>
+	  <br/><br/>
+      <!-- Links -->
+      <h3 class='title'>Here, have some links :)</h3>
+      <p class='text'>
+        You can<br/>
+        &nbsp;check out my code <a target="_blank" href='https://www.gitlab.com/GuillaumeVDN/'>on gitlab.com</a> or <a target="_blank" href='https://www.github.com/GuillaumeVDN/'>on github.com</a><br/>
+        &nbsp;discover my public plugins <a target="_blank" href='https://www.spigotmc.org/resources/authors/70459/'>on spigotmc.org</a> or <a target="_blank" href='https://www.mc-market.org/resources/authors/49322/'>on mc-market.org</a><br/>
+        &nbsp;join my <a target="_blank" href='http://www.guillaumevdn.com/plugins/discord/'>discord server</a> to get in touch with me<br/><br/>
+        <br/><br/>
+      </p>
+      <!-- Projects -->
+      <h3 class='title'>My public projects</h3>
+      <p class='text'>
+        I've made a few public plugins, some are pretty solid.<br/><br/>
+		<b>Premium (biggest) public projects :</b>
+		<br>
+        <i>
+		- 2019: <a target="_blank" href='https://www.spigotmc.org/resources/70235/'>SupremeShops</a>, a complete shops plugins with different options (merchants/renting/dynamic prices/...)
+        - 2018: <a target="_blank" href='https://www.spigotmc.org/resources/63503/'>BettingGames</a>, a complete casino games suite, inspired by 'CS:GO' gambling<br/>
+        - 2017: <a target="_blank" href='https://www.spigotmc.org/resources/38734/'>QuestCreator</a>, my biggest project so far, to create quests, adventures, and more mechanics<br/>
+        - 2015: <a target="_blank" href='https://www.spigotmc.org/resources/12353/'>Potatoes</a>, mini-game pretty similar to TNT Tag<br/>
+        </i><br/><br/>
+		<b>Freemium (open-source) public projects :</b>
+		<br>
+		<i>
+		- 2019: <a target="_blank" href='https://www.spigotmc.org/resources/69895/'>ItemBloquer</a>, a basic plugin to prevent some items to spawn<br/>
+		- 2019: <a target="_blank" href='https://www.spigotmc.org/resources/63860/'>HoloXP</a>, a basic hologram displayed when killing mobs<br/>
+		- 2018: <a target="_blank" href='https://www.spigotmc.org/resources/55107/'>GSlotMachine</a>, a simple slots machine plugin<br/>
+        - 2017: <a target="_blank" href='https://www.spigotmc.org/resources/41846/'>(inactive) BungeeMessagingAPI</a>, I was starting using bungee-cord<br/>
+        - 2016: <a target="_blank" href='https://www.spigotmc.org/resources/24697/'>(inactive) ScrollBoard</a>, scoreboard plugin that can be "scrolled" up and down.<br/>
+        - 2016: <a target="_blank" href='https://www.spigotmc.org/resources/24180/'>GCore</a>, my main library<br/>
+        - 2016: <a target="_blank" href='https://www.spigotmc.org/resources/15755/'>(inactive) SurvivalMysteryChests</a>, a plugin to create mystery boxes<br/>
+        - 2015: <a target="_blank" href='https://www.spigotmc.org/resources/14363/'>CustomCommands</a>, to create... custom commands, how surprising<br/>
+        - 2015: <a target="_blank" href='https://www.spigotmc.org/resources/10225/'>GParticles</a>, cosmetics plugin (my first public plugin, re-uploaded in 2015 for some reason)<br/>
+        - 2014: (old projects that were removed)<br/>
+        </i>
+        <br/><br/>
+	</p>
+    <h3 class='title'>My custom projects</h3>
+	<p class='text'>
+        Besides that, I have a lot of experience with custom plugins (100+ successful orders made for maybe 50+ customers).<br/><br/>
+        Here's a list of some works I've made for people (sorted by importance). It might not be 100% accurate, but it's updated when new projects are completed.<br/><br/>
+        <i>
+        <b>Gigantic projects (> 100 hours) / big projects (< 100 hours)</b><br>
+        *2017-2018: Lots of plugins (player/database management, games, lots of mechanics, factions, ...) for a french network named Legacia.<br/>
+        *2015-2017: Lots of plugins (miscallenous game mechanics, some games, ...) for Helenos.<br/>
+        *2015-2017: Lots of plugins (miscallenous game mechanics) for Mcfreestyles.<br/>
+        2017: Lots of plugins (donjon, ranking, and more game mechanics) for Razornauth.<br/>
+        2017: Road To The City, adventure game. (Flav)<br/>
+        2016: MostWanted, adventure game. (Percy)<br/>
+        2016: GoldenUhcHost, complete UHC plugin. (Kyrutoo)<br/>
+        <br/>
+        <b>Medium projects (< 25 hours)</b><br/>
+        2018: StackUpgrade, including spawners stacking/upgrade/custom drops, mob/items stacking. (!雙手大師)<br/>
+        2018: TreeFeller, a custom trees detection and chopping plugin. (OwnedGG)<br/>
+        2018: LydariaFactions, factions plugin. (?)<br/>
+        2018: LydariaKOTH, faction minigame. (?)<br/>
+        2018: LydariaTotem, faction minigame. (?)<br/>
+        2018: LydariaMisc, miscallenous features. (?)<br/>
+        2018: KeraziaCore, miscallenous mechanics. (antho_57)<br/>
+        *2014-2017: Lots of modifications/updates for existing plugins.<br/>
+        *2017: Lots of plugins (backpack, ban, NPC, map management, and more mechanics) for a french network called NationsGlory.<br/>
+        2017: NoctaliaRanking, faction ranking plugin with database points. (french network Noctalia)<br/>
+        2017: OriginalCharacters, player character management. (Malcolm)<br/>
+        2017: Villages, parcel management. (baptiste0928)<br/>
+        2017: YlfAchievement, custom achievements. (Chocolatix)<br/>
+        2017: YlfJob, jobs management. (Chocolatix)<br/>
+        2017: YlfZoneCmd, commands with zone management. (Chocolatix)<br/>
+        2017: HotelVente, shop plugin. (iBalix)<br/>
+        2017: PlotSave, plot plugin. (iBalix)<br/>
+        2017: PvpArena, player PVP arena. (JayGame)<br/>
+        2016: Upgrader, abilities/unlocking shop, item selling and misc. (LD)<br/>
+        2016: Pacman, minigame from the famous Pacman game. (Idp21)<br/>
+        2016: CustomEnchants, custom enchantments. (Jordan)<br/>
+        2016: IlluminaCoin, economy plugin. (?)<br/>
+        2016: IlluminaShop, shop plugin. (?)<br/>
+        2016: ChestRegen, chest regeneration with region management. (Chocolatix)<br/>
+        2016: HeroRPCore, door/chest protection and lockpicking. (Amky)<br/>
+        2016: KeepYourSpawner, spawners management. (antho_57)<br/>
+        2016: ElfiaWar, faction war management. (?)<br/>
+        2016: Practice, PVP practice plugin. (Faygwenn)<br/>
+        2016: SigmaMontures, mob mount plugin. (?)<br/>
+        2014: KingShop, shop management. (?)<br/>
+        <br/>
+        <b>Small plugins (< 5 hrs) / very small plugins (< 2 hours) (this list won't be updated anymore)</b><br/>
+        2018: HoloXP, displaying holograms when killing mobs/mythic mobs. (Underune) (published on Spigot)<br/>
+        2018: SupplyCrates, chest envoys management with item/timers, random loot, etc. (FreshPepperMint)<br/>
+        2018: MoreHearts, health plugin. (?)<br/>
+        *2014-2017: Lots of little plugins I don't remember about / don't have the source archive anymore.<br/>
+        2017: FollowingSpell, spell following the cursor. (Malcolm)<br/>
+        2017: YlfSlotRpg, item slot management. (Chocolatix)<br/>
+        2017: ShopPointsConcertor, convert IG money to shop points. (Alieta)<br/>
+        2017: EasyKits, simple kits plugin. (Dartasen)<br/>
+        2017: Vote4Ban, banishment voting system. (Happy_Killing)<br/>
+        2017: FactionProtection, protection for newly created factions. (iBalix)<br/>
+        2016: SigmaFW, egg mobs management. (?)<br/>
+        2016: TimePerm, permissions with time limitations. (?)<br/>
+        2016: ItemRarity, item management plugin. (NeoXioen)<br/>
+        2016: SOItemRestricted, item restriction plugin. (Mr_Tissandre)<br/>
+        2016: SORank, rank plugin. (Mr_Tissandre)<br/>
+        2016: MobSpawn, spawning regulation. (?)<br/>
+        2016: MobStack, mob stacking plugin. (?)<br/>
+        2016: AntiRegenWalls, ... it definitely does something. (Jordan)<br/>
+        2016: Fly, fly management. (Jordan)<br/>
+        2016: Spawners, spawner give/management plugin. (Jordan)<br/>
+        2016: Sponges, modifications to sponges behavior. (Jordan)<br/>
+        2016: InvasionZSelector, bungee server selector. (?)<br/>
+        2016: FactionsRanking, faction ranking plugin. (Froyz)<br/>
+        2016: IrixiaRank, rank plugin. (Faygwenn)<br/>
+        2016: AnnonceChat, chat announcements. (antho_57)<br/>
+        2016: ArrowEffectSC, levitation effect management. (Amky)<br/>
+        2016: SCPatcher, chest modification plugin. (?)<br/>
+        2015: Autoshop, authkey management. (?)<br/>
+      </p>
+    </div>
+  </body>
+</html>

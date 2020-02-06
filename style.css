@@ -1,0 +1,136 @@
+/* ----- entire app ----- */
+
+#app {
+  font-family: 'Courier', Helvetica, Arial, sans-serif;
+  color: #2c3e50;
+  margin-bottom: 50px;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  color: #303030;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* ----- navigation bar ----- */
+
+#nav {
+  padding: 30px;
+  text-align: center;
+}
+
+#nav label {
+  font-weight: bold;
+  color: #303030;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#nav label.active {
+  color: rgb(0, 162, 255);
+}
+
+/* ----- home ----- */
+
+#home h2 {
+  margin-left: 10px;
+}
+
+#home p {
+  margin-left: 20px;
+}
+
+#home .links a {
+  color: rgb(0, 60, 255);
+}
+
+#home .links {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+#home .links label {
+  color: rgb(0, 60, 255);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ----- projects ----- */
+
+.project-list .name {
+  color: #00CED1;
+  font-weight: bold;
+}
+
+.project-list label {
+  margin-left: 10px;
+}
+
+.project-list .detail {
+  margin-left: 0px;
+  font-size: 13px;
+  font-style: italic;
+  color: rgb(0, 160, 209);
+}
+
+.project-list .detail.not-maintained {
+  color: red;
+}
+
+.project-list .detail.maintained {
+  color: green;
+}
+
+.project-list .detail.code-link {
+  color: rgb(0, 60, 255);
+  font-style: italic;
+  text-decoration: none;
+}
+
+/* ----- useful classes ----- */
+
+.centeredXY {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.centeredX {
+  margin: auto;
+  width: 75%;
+}
+
+hr.line {
+  margin: 0px;
+}
+
+hr.break10 {
+  height: 10px;
+  margin: 0px;
+  border: 0px;
+  visibility: hidden;
+}
+
+hr.break15 {
+  height: 15px;
+  margin: 0px;
+  border: 0px;
+  visibility: hidden;
+}

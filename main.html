@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta -->
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<title>GuillaumeVDN</title>
+		<!-- Imports -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="./libs/jquery.js"></script>
+	</head>
+	<body bgcolor="#F6F6F6">
+		<!-- App container -->
+		<div id="app">
+			<!-----------------------------------------------------------------------------------------------------
+												Navigation bar												   --->
+			<div id="nav">
+				<label @click="setView('home')" v-bind:class="{active: currentView === 'home'}">OwO</label>
+				&nbsp; | &nbsp;
+				<label @click="setView('personal-projects')" v-bind:class="{active: currentView === 'personal-projects'}">Personal projects</label>
+				&nbsp; | &nbsp;
+				<label @click="setView('commissions')" v-bind:class="{active: currentView === 'commissions'}">Commissions</label>
+			</div>
+			<!-----------------------------------------------------------------------------------------------------
+												View : home												       --->
+			<div id="home" class='centeredXY' v-if="currentView === 'home'">
+				<!-- Photo -->
+				<img style="max-width: 150px; height: auto;" alt="the handsome me" src="./assets/profile.png" />
+				<p><i>^ the handsome me</i><br/><br/></p>
+				<!-- Who am I -->
+				<h1>Hello, there !</h1>
+				<h2>I'm a {{ age }} old java developer from Belgium.</h2>
+				<p>
+					I mainly work on Minecraft Spigot plugins, and lots of projects are in my mind.<br/><br/>
+					My experience with programming (mostly Java for the first years) is <i>around {{ experienceTime }}</i>.<br/><br/>
+				</p>
+				<!-- Links -->
+				<h2>Here, have some links :)</h2>
+				<div class="links">
+					take a loot at <label @click="setView('personal-projects')">my personal projects</label>
+						or get a list of <label @click="setView('commissions')">commissions</label> I've made for people
+					<hr class="break10" />
+					check out my code <a target="_blank" href='https://www.gitlab.com/GuillaumeVDN/'>on gitlab.com</a>
+						<i>(or <a target="_blank" href='https://www.github.com/GuillaumeVDN/'>github.com</a>)</i>
+					<hr class="break10" />
+					discover my public plugins <a target="_blank" href='https://www.spigotmc.org/resources/authors/70459/'>on spigotmc.org</a>
+						<i>(or <a target="_blank" href='https://www.mc-market.org/resources/authors/49322/'>mc-market.org</a>)</i>
+					<hr class="break10" />
+					join my <a target="_blank" href='http://www.guillaumevdn.com/plugins/discord/'>discord server</a> to get in touch with me
+				</div>
+			</div>
+			<!-----------------------------------------------------------------------------------------------------
+												View : personal projects									   --->
+			<div id="personal-projects" class='centeredX' v-else-if="currentView === 'personal-projects'">
+				<h1>My personal projects</h1 style="margin-left: 20px;">
+				<p style="margin-left: 10px;">I've published a few projects, mainly plugins. Some are pretty massive !</p>
+				<p style="margin-left: 10px;">They're sorted here following my attachment to them :o</p>
+				<hr class="break15" /> <hr class="line" />
+				<h2 style="margin-left: 10px;">Spigot plugins</h2>
+				<project-list list-name="(premium)" :projects="projects.published.premiumPlugins" style="margin-left: 20px;"></project-list>
+				<project-list list-name="(free)" :projects="projects.published.freePlugins" style="margin-left: 20px;"></project-list>
+				<hr class="break15" /> <hr class="line" />
+				<project-list list-name="Dicord bots" :projects="projects.published.bots" style="margin-left: 10px;" list-name-big="true"></project-list>
+				<hr class="break15" /> <hr class="line" />
+				<project-list list-name="Websites" :projects="projects.published.web" style="margin-left: 10px;" list-name-big="true"></project-list>
+			</div>
+			<!-----------------------------------------------------------------------------------------------------
+												View : commissions      									   --->
+			<div id="commissions" class='centeredX' v-else-if="currentView === 'commissions'">
+				Commissions go here
+			</div>
+			<!---------------------------------------------------------------------------------------------------->
+		</div>
+		<!-- App -->
+		<script src="main.js"></script>
+	</body>
+</html>
