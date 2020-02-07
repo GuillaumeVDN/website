@@ -7,8 +7,8 @@
 		<title>GuillaumeVDN</title>
 		<!-- Imports -->
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="https://unpkg.com/vue/dist/vue.js"></script>
-		<script src="./libs/jquery.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+		<script src="const.js"></script>
 	</head>
 	<body bgcolor="#F6F6F6">
 		<!-- App container -->
@@ -16,7 +16,7 @@
 			<!-----------------------------------------------------------------------------------------------------
 												Navigation bar												   --->
 			<div id="nav">
-				<label @click="setView('home')" v-bind:class="{active: currentView === 'home'}">OwO</label>
+				<label @click="setView('home')" v-bind:class="{active: currentView === 'home'}">Who ?</label>
 				&nbsp; | &nbsp;
 				<label @click="setView('personal-projects')" v-bind:class="{active: currentView === 'personal-projects'}">Personal projects</label>
 				&nbsp; | &nbsp;
@@ -57,18 +57,28 @@
 				<p style="margin-left: 10px;">I've published a few projects, mainly plugins. Some are pretty massive !</p>
 				<p style="margin-left: 10px;">They're sorted here following my attachment to them :o</p>
 				<hr class="break15" /> <hr class="line" />
-				<h2 style="margin-left: 10px;">Spigot plugins</h2>
-				<project-list list-name="(premium)" :projects="projects.published.premiumPlugins" style="margin-left: 20px;"></project-list>
-				<project-list list-name="(free)" :projects="projects.published.freePlugins" style="margin-left: 20px;"></project-list>
+				<project-list list-name="Spigot plugins (premium)" :projects="projects.personal.premiumPlugins" style="margin-left: 10px;"></project-list>
 				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Dicord bots" :projects="projects.published.bots" style="margin-left: 10px;" list-name-big="true"></project-list>
+				<project-list list-name="Spigot plugins (free)" :projects="projects.personal.freePlugins" style="margin-left: 10px;"></project-list>
 				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Websites" :projects="projects.published.web" style="margin-left: 10px;" list-name-big="true"></project-list>
+				<project-list list-name="Discord bots" :projects="projects.personal.bots" style="margin-left: 10px;"></project-list>
+				<hr class="break15" /> <hr class="line" />
+				<project-list list-name="Websites" :projects="projects.personal.web" style="margin-left: 10px;"></project-list>
+				<hr class="break15" /> <hr class="line" />
+				<project-list list-name="Miscellaneous" :projects="projects.personal.misc" style="margin-left: 10px;"></project-list>
 			</div>
 			<!-----------------------------------------------------------------------------------------------------
 												View : commissions      									   --->
 			<div id="commissions" class='centeredX' v-else-if="currentView === 'commissions'">
-				Commissions go here
+				<h1>Plugin commissions</h1 style="margin-left: 20px;">
+				<p style="margin-left: 10px;">I have a lot of experience with custom plugins ! (100+ successful orders made for maybe 50+ customers)</p>
+				<p style="margin-left: 10px;">Here's a list of some works I've made for people (sorted by importance). It might not be 100% accurate, but it's updated when notable new projects are completed.</p>
+				<hr class="break15" /> <hr class="line" />
+				<project-list list-name="Big projects (> 100h)" list-description="Lots of plugins made for the same server" :projects="projects.commissions.big" style="margin-left: 10px;"></project-list>
+				<hr class="break15" /> <hr class="line" />
+				<project-list list-name="Medium plugins (< 50h)" list-description="Projects of all kind, the most regular commissions" :projects="projects.commissions.medium" style="margin-left: 10px;"></project-list>
+				<hr class="break15" /> <hr class="line" />
+				<project-list list-name="Small plugins (< 5h)" list-description="This list is far from complete and won't be updated anymore" :projects="projects.commissions.small" style="margin-left: 10px;"></project-list>
 			</div>
 			<!---------------------------------------------------------------------------------------------------->
 		</div>

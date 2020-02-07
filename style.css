@@ -134,3 +134,17 @@ hr.break15 {
   border: 0px;
   visibility: hidden;
 }
+
+.toggle {
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.toggle.yes {
+  color: green;
+}
+
+.toggle.no {
+  color: red;
+}
