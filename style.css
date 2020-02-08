@@ -1,14 +1,19 @@
 /* ----- entire app ----- */
 
+body {
+  background-image: url("./assets/bg.png");
+  background-repeat: repeat;
+}
+
 #app {
   font-family: 'Courier', Helvetica, Arial, sans-serif;
-  color: #2c3e50;
+  color: #c5c5c5;
   margin-bottom: 50px;
 }
 
 h1, h2, h3 {
   font-weight: bold;
-  color: #303030;
+  color: #ffffff;
 }
 
 h1 {
@@ -26,22 +31,25 @@ h3 {
 
 /* ----- navigation bar ----- */
 
-#nav {
+.nav-bar {
   padding: 30px;
   text-align: center;
 }
 
-#nav label {
+.nav-bar label {
   font-weight: bold;
-  color: #303030;
-  text-decoration: underline;
+  color: #ffffff;
   background: none;
   border: none;
+}
+
+.nav-bar label.selector {
+  text-decoration: underline;
   cursor: pointer;
 }
 
-#nav label.active {
-  color: rgb(0, 162, 255);
+.nav-bar label.active {
+  color: rgb(0, 225, 255);
 }
 
 /* ----- home ----- */
@@ -55,7 +63,7 @@ h3 {
 }
 
 #home .links a {
-  color: rgb(0, 60, 255);
+  color: rgb(0, 162, 255);
 }
 
 #home .links {
@@ -64,15 +72,20 @@ h3 {
 }
 
 #home .links label {
-  color: rgb(0, 60, 255);
+  color: rgb(0, 162, 255);
   cursor: pointer;
   text-decoration: underline;
+}
+
+.profile img {
+  max-height: 250px;
+  width: auto;
 }
 
 /* ----- projects ----- */
 
 .project-list .name {
-  color: #00CED1;
+  color: rgb(6, 251, 255);
   font-weight: bold;
 }
 
@@ -84,7 +97,7 @@ h3 {
   margin-left: 0px;
   font-size: 13px;
   font-style: italic;
-  color: rgb(0, 160, 209);
+  color: rgb(0, 162, 255);
 }
 
 .project-list .detail.not-maintained {
@@ -96,29 +109,42 @@ h3 {
 }
 
 .project-list .detail.code-link {
-  color: rgb(0, 60, 255);
+  color: rgb(0, 162, 255);
   font-style: italic;
   text-decoration: none;
 }
 
 /* ----- useful classes ----- */
 
-.centeredXY {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+@media all and (min-width: 1000px) and (min-height: 800px) {
+  .centeredXY {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .centeredX {
+    margin: auto;
+    width: 75%;
+  }
 }
 
-.centeredX {
-  margin: auto;
-  width: 75%;
+@media not all and (min-width: 1000px) and (min-height: 800px) {
+  .centeredXY {
+    margin: auto;
+    width: 75%;
+  }
 }
 
 hr.line {
-  margin: 0px;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgba(133, 133, 133, 0.192);
+  margin: 1em 0;
+  padding: 0;
 }
 
 hr.break10 {
@@ -137,14 +163,13 @@ hr.break15 {
 
 .toggle {
   font-size: 15px;
-  text-decoration: underline;
   cursor: pointer;
 }
 
 .toggle.yes {
-  color: green;
+  color: rgb(116, 116, 116);
 }
 
 .toggle.no {
-  color: red;
+  color: rgb(43, 255, 0);
 }

@@ -8,26 +8,26 @@
 		<!-- Imports -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-		<script src="const.js"></script>
+		<script src="./scripts/utils.js"></script>
+		<script src="./scripts/const.js"></script>
+		<script src="./scripts/components/nav.js"></script>
+		<script src="./scripts/components/project.js"></script>
+		<script src="./scripts/components/project-list.js"></script>
+		<script src="./scripts/components/project-lists.js"></script>
 	</head>
-	<body bgcolor="#F6F6F6">
+	<body>
 		<!-- App container -->
 		<div id="app">
-			<!-----------------------------------------------------------------------------------------------------
-												Navigation bar												   --->
-			<div id="nav">
-				<label @click="setView('home')" v-bind:class="{active: currentView === 'home'}">Who ?</label>
-				&nbsp; | &nbsp;
-				<label @click="setView('personal-projects')" v-bind:class="{active: currentView === 'personal-projects'}">Personal projects</label>
-				&nbsp; | &nbsp;
-				<label @click="setView('commissions')" v-bind:class="{active: currentView === 'commissions'}">Commissions</label>
-			</div>
+			<!-- Nav bar -->
+			<nav-bar :views="views"></nav-bar>
 			<!-----------------------------------------------------------------------------------------------------
 												View : home												       --->
 			<div id="home" class='centeredXY' v-if="currentView === 'home'">
 				<!-- Photo -->
-				<img style="max-width: 150px; height: auto;" alt="the handsome me" src="./assets/profile.png" />
-				<p><i>^ the handsome me</i><br/><br/></p>
+				<div class="profile">
+					<img alt="the handsome me" src="./assets/profile.png" />
+					<p><i>^ the handsome me</i><br/><br/></p>	
+				</div>
 				<!-- Who am I -->
 				<h1>Hello, there !</h1>
 				<h2>I'm a {{ age }} old java developer from Belgium.</h2>
@@ -56,16 +56,12 @@
 				<h1>My personal projects</h1 style="margin-left: 20px;">
 				<p style="margin-left: 10px;">I've published a few projects, mainly plugins. Some are pretty massive !</p>
 				<p style="margin-left: 10px;">They're sorted here following my attachment to them :o</p>
-				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Spigot plugins (premium)" :projects="projects.personal.premiumPlugins" style="margin-left: 10px;"></project-list>
-				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Spigot plugins (free)" :projects="projects.personal.freePlugins" style="margin-left: 10px;"></project-list>
-				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Discord bots" :projects="projects.personal.bots" style="margin-left: 10px;"></project-list>
-				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Websites" :projects="projects.personal.web" style="margin-left: 10px;"></project-list>
-				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Miscellaneous" :projects="projects.personal.misc" style="margin-left: 10px;"></project-list>
+				<hr class="break10" />
+				<project-lists
+					style="margin-left: 10px;"
+					id="personal"
+					:lists="projects.personal"
+				></project-lists>
 			</div>
 			<!-----------------------------------------------------------------------------------------------------
 												View : commissions      									   --->
@@ -73,16 +69,16 @@
 				<h1>Plugin commissions</h1 style="margin-left: 20px;">
 				<p style="margin-left: 10px;">I have a lot of experience with custom plugins ! (100+ successful orders made for maybe 50+ customers)</p>
 				<p style="margin-left: 10px;">Here's a list of some works I've made for people (sorted by importance). It might not be 100% accurate, but it's updated when notable new projects are completed.</p>
-				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Big projects (> 100h)" list-description="Lots of plugins made for the same server" :projects="projects.commissions.big" style="margin-left: 10px;"></project-list>
-				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Medium plugins (< 50h)" list-description="Projects of all kind, the most regular commissions" :projects="projects.commissions.medium" style="margin-left: 10px;"></project-list>
-				<hr class="break15" /> <hr class="line" />
-				<project-list list-name="Small plugins (< 5h)" list-description="This list is far from complete and won't be updated anymore" :projects="projects.commissions.small" style="margin-left: 10px;"></project-list>
+				<hr class="break10" />
+				<project-lists
+					style="margin-left: 10px;"
+					id="commissions"
+					:lists="projects.commissions"
+				></project-lists>
 			</div>
 			<!---------------------------------------------------------------------------------------------------->
 		</div>
 		<!-- App -->
-		<script src="main.js"></script>
+		<script src="./scripts/app.js"></script>
 	</body>
 </html>
