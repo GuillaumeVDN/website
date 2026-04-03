@@ -1,84 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!-- Meta -->
-		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-		<meta content="utf-8" http-equiv="encoding">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>GuillaumeVDN</title>
-		<!-- Imports -->
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-		<script src="./scripts/utils.js"></script>
-		<script src="./scripts/const.js"></script>
-		<script src="./scripts/components/nav.js"></script>
-		<script src="./scripts/components/project.js"></script>
-		<script src="./scripts/components/project-list.js"></script>
-		<script src="./scripts/components/project-lists.js"></script>
 	</head>
 	<body>
-		<!-- App container -->
-		<div id="app">
-			<!-- Nav bar -->
-			<nav-bar :views="views"></nav-bar>
-			<!-----------------------------------------------------------------------------------------------------
-												View : home												       --->
-			<div id="home" class='centeredXY' v-if="currentView === 'home'">
-				<!-- Photo -->
-				<div class="profile">
-					<img alt="the handsome me" src="./assets/profile.png" />
-					<p><i>^ the handsome me</i><br/><br/></p>	
-				</div>
-				<!-- Who am I -->
-				<h1>Hello, there !</h1>
-				<h2>I'm a {{ age }} old java developer from Belgium.</h2>
-				<p>
-					I mainly work on Minecraft Spigot plugins, and lots of projects are in my mind.<br/><br/>
-					My experience with programming (mostly Java for the first years) is <i>around {{ experienceTime }}</i>.<br/><br/>
-				</p>
-				<!-- Links -->
-				<h2>Here, have some links :)</h2>
-				<div class="links">
-					take a loot at <label @click="setView('personal-projects')">my personal projects</label>
-						or get a list of <label @click="setView('commissions')">commissions</label> I've made for people
-					<hr class="break10" />
-					check out my code <a target="_blank" href='https://www.gitlab.com/GuillaumeVDN/'>on gitlab.com</a>
-						<i>(or <a target="_blank" href='https://www.github.com/GuillaumeVDN/'>github.com</a>)</i>
-					<hr class="break10" />
-					discover my public plugins <a target="_blank" href='https://www.spigotmc.org/resources/authors/70459/'>on spigotmc.org</a>
-						<i>(or <a target="_blank" href='https://www.mc-market.org/resources/authors/49322/'>mc-market.org</a>)</i>
-					<hr class="break10" />
-					join my <a target="_blank" href='http://www.guillaumevdn.com/plugins/discord/'>discord server</a> to get in touch with me
-				</div>
+		<canvas id="network"></canvas>
+		<div id="content">
+			<div class="profile">
+				<img alt="profile" src="./assets/profile.png" />
 			</div>
-			<!-----------------------------------------------------------------------------------------------------
-												View : personal projects									   --->
-			<div id="personal-projects" class='centeredX' v-else-if="currentView === 'personal-projects'">
-				<h1>My personal projects</h1 style="margin-left: 20px;">
-				<p style="margin-left: 10px;">I've published a few projects, mainly plugins. Some are pretty massive !</p>
-				<p style="margin-left: 10px;">They're sorted here following my attachment to them :o</p>
-				<hr class="break10" />
-				<project-lists
-					style="margin-left: 10px;"
-					id="personal"
-					:lists="projects.personal"
-				></project-lists>
+			<h1>Hi!</h1>
+			<p>
+				I'm a <span id="age"></span> years old java developer from Belgium, living in Paris.
+				I started programming around <span id="experience"></span> ago.
+			</p>
+			<p>
+				I used to work on a lot of Minecraft Spigot plugins and games. Now, I work as a lead software engineer at Dashdoc and spend less time programming on personal projects, exploring other hobbies.
+			</p>
+			<div class="links">
+				<p><a target="_blank" href="https://www.linkedin.com/in/guillaumevdn/">Connect with me on LinkedIn</a></p>
+				<p><a target="_blank" href="https://www.github.com/GuillaumeVDN/">Check out my code on GitHub</a></p>
+				<p><a target="_blank" href="https://www.spigotmc.org/resources/authors/70459/">Discover my public plugins on SpigotMC</a></p>
 			</div>
-			<!-----------------------------------------------------------------------------------------------------
-												View : commissions      									   --->
-			<div id="commissions" class='centeredX' v-else-if="currentView === 'commissions'">
-				<h1>Plugin commissions</h1 style="margin-left: 20px;">
-				<p style="margin-left: 10px;">I have a lot of experience with custom plugins ! (100+ successful orders made for maybe 50+ customers)</p>
-				<p style="margin-left: 10px;">Here's a list of some works I've made for people (sorted by importance). It might not be 100% accurate, but it's updated when notable new projects are completed.</p>
-				<hr class="break10" />
-				<project-lists
-					style="margin-left: 10px;"
-					id="commissions"
-					:lists="projects.commissions"
-				></project-lists>
-			</div>
-			<!---------------------------------------------------------------------------------------------------->
 		</div>
-		<!-- App -->
 		<script src="./scripts/app.js"></script>
 	</body>
 </html>

@@ -1,175 +1,67 @@
-/* ----- entire app ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background-image: url("./assets/bg.png");
-  background-repeat: repeat;
-}
-
-#app {
-  font-family: 'Courier', Helvetica, Arial, sans-serif;
+  background: #000;
   color: #c5c5c5;
-  margin-bottom: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  font-weight: bold;
-  color: #ffffff;
+canvas#network {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
-h1 {
-  font-size: 24px;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-h3 {
-  font-size: 16px;
-  font-style: italic;
-}
-
-/* ----- navigation bar ----- */
-
-.nav-bar {
-  padding: 30px;
+#content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 60px 24px;
   text-align: center;
 }
 
-.nav-bar label {
-  font-weight: bold;
-  color: #ffffff;
-  background: none;
-  border: none;
-}
-
-.nav-bar label.selector {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.nav-bar label.active {
-  color: rgb(0, 225, 255);
-}
-
-/* ----- home ----- */
-
-#home h2 {
-  margin-left: 10px;
-}
-
-#home p {
-  margin-left: 20px;
-}
-
-#home .links a {
-  color: rgb(0, 162, 255);
-}
-
-#home .links {
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-#home .links label {
-  color: rgb(0, 162, 255);
-  cursor: pointer;
-  text-decoration: underline;
-}
-
 .profile img {
-  max-height: 250px;
+  max-height: 220px;
   width: auto;
+  border-radius: 50%;
+  margin-bottom: 32px;
 }
 
-/* ----- projects ----- */
-
-.project-list .name {
-  color: rgb(6, 251, 255);
-  font-weight: bold;
+h1 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 24px;
 }
 
-.project-list label {
-  margin-left: 10px;
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
 }
 
-.project-list .detail {
-  margin-left: 0px;
-  font-size: 13px;
-  font-style: italic;
-  color: rgb(0, 162, 255);
+.links {
+  margin-top: 12px;
 }
 
-.project-list .detail.not-maintained {
-  color: red;
+.links p {
+  margin-bottom: 8px;
 }
 
-.project-list .detail.maintained {
-  color: green;
-}
-
-.project-list .detail.code-link {
-  color: rgb(0, 162, 255);
-  font-style: italic;
+.links a {
+  color: #00a2ff;
   text-decoration: none;
 }
 
-/* ----- useful classes ----- */
-
-@media all and (min-width: 1000px) and (min-height: 800px) {
-  .centeredXY {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-  .centeredX {
-    margin: auto;
-    width: 75%;
-  }
-}
-
-@media not all and (min-width: 1000px) and (min-height: 800px) {
-  .centeredXY {
-    margin: auto;
-    width: 75%;
-  }
-}
-
-hr.line {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid rgba(133, 133, 133, 0.192);
-  margin: 1em 0;
-  padding: 0;
-}
-
-hr.break10 {
-  height: 10px;
-  margin: 0px;
-  border: 0px;
-  visibility: hidden;
-}
-
-hr.break15 {
-  height: 15px;
-  margin: 0px;
-  border: 0px;
-  visibility: hidden;
-}
-
-.toggle {
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.toggle.yes {
-  color: rgb(116, 116, 116);
-}
-
-.toggle.no {
-  color: rgb(43, 255, 0);
+.links a:hover {
+  text-decoration: underline;
 }
